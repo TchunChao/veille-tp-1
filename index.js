@@ -153,7 +153,6 @@ app.get('/peupler', (req,res) =>{
 		db.collection('adresse').save(personne, (err, result) => {
 		if (err) return console.log(err)
 			console.log('sauvegarder dans la BD')
-			
 		})
 	}
 	res.redirect('/adresse')
@@ -162,9 +161,19 @@ app.get('/peupler', (req,res) =>{
 //db.adresse.find({nom: "Mercier"})
 //db.adresse.find({courriel: "pthomsen@gmail.com"})
 
-app.get('/rechercher', (req,res) =>{
+app.post('/rechercher', (req, res) => {
 	//res.resultat = peupler_bd()
 	console.log('rechercher')
-	
-	res.redirect('/adresse')
+	var rechercher = req.body.rechercher;
+	console.log(rechercher)
+	let cursor = db.collection('adresse').find({
+		$or: [
+			{nom:{'$regex' : rechercher + '', '$options' : 'i'}},
+			{prenom:{'$regex' : rechercher + '', '$options' : 'i'}},
+			{telephone:{'$regex' : rechercher + '', '$options' : 'i'}},
+			{courriel:{'$regex' : rechercher + '', '$options' : 'i'}}
+		]
+	}).toArray(function(err, resultat) {
+		res.render('adresse.ejs', {adresse: resultat})
+	})
 })
