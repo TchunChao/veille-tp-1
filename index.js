@@ -128,7 +128,7 @@ app.post('/modifier', (req, res) => {
 
 app.get('/trier/:cle/:ordre', (req, res) => {
 	let cle = req.params.cle
-	console.log("trié")
+	console.log("trier")
 	let ordre = (req.params.ordre == 'asc' ? 1:-1)
 	let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
 		ordre = (req.params.ordre == 'asc' ? "desc":"asc")
@@ -140,7 +140,7 @@ app.get('/peupler', (req,res) =>{
 	//res.resultat = peupler_bd()
 	console.log('peupler')
 	let tab = peupler();
-	console.log(tab)
+	//console.log(tab)
 	for(let i=0; i<10; i++) {
 		let tabTemp = tab[i];
 		let personne = {
@@ -156,5 +156,15 @@ app.get('/peupler', (req,res) =>{
 			
 		})
 	}
+	res.redirect('/adresse')
+})
+
+//db.adresse.find({nom: "Mercier"})
+//db.adresse.find({courriel: "pthomsen@gmail.com"})
+
+app.get('/rechercher', (req,res) =>{
+	//res.resultat = peupler_bd()
+	console.log('rechercher')
+	
 	res.redirect('/adresse')
 })
