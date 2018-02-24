@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <title>Exercice 6</title>
+</head>
+<body>
+ Node.js, Express et MongoDB.
+ <button id='update'>Mise à jour téléphone</button>
+ <form action="/ajouter" method="POST">
+	 <input type="text" placeholder="nom" name="nom">
+	 <input type="text" placeholder="Telephone" name="telephone">
+	 <button type="submit">Submit</button>
+ </form>
+
+ <table class="tableau">
+	 <% adresses.forEach(elm => {%>
+	 <tr>
+		 <td><%= elm.id %></td>
+		 <td><%= elm.nom %></td>
+		 <td><%= elm.telephone %></td>
+		 <td><%= elm.telephone %></td>
+	 </tr>
+	 <% }) %>
+ </table>
+</body>
+</html>
