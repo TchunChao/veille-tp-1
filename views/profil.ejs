@@ -1,12 +1,25 @@
 <%- include('composants/head') %> 
+<head>
+	<script defer src="../js/fontawesome-all.js"></script>
+</head>
 <body>
  <%- include('composants/entete') %>
- <div>
+ <div id="profil">
 	 <% adresse.forEach(elm => {%>
-	 <p>Prénom: <%=elm.prenom%></p>
-	 <p>Nom: <%=elm.nom%></p>
-	 <p>Téléphone: <%=elm.telephone%></p>
-	 <p>Courriel: <%=elm.courriel%></p>
+	 <table>
+	 	<tr>
+	 		<th>Prénom</th>
+	 		<th>Nom</th>
+	 		<th>Téléphone</th>
+	 		<th>Courriel</th>
+	 	</tr>
+	 	<tr>
+	 		<td><%=elm.prenom%></td>
+	 		<td><%=elm.nom%></td>
+	 		<td><%=elm.telephone%></td>
+	 		<td><%=elm.courriel%></td>
+	 	</tr>
+	 </table>
 	 <% }) %>
  </div>
  <%- include('composants/footer') %>
