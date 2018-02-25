@@ -1,24 +1,31 @@
 * {
 	margin: 0;
+	padding: 0;
 	list-style-type: none;
 	text-decoration: none;
 
 	div.nav-container {
-		display: flex;
-		justify-content: center;
-
-		a:first-child {
+		
+		a#logo {
 			display: flex;
+			justify-content: center;
+			line-height: 5;
 
 			h1 {
-				line-height: 3;
+				font-size: 1em;
 			}
+			
 		}
-		a:not(:first-child) {
-			line-height: 5;
-		}
-		form {
-			line-height: 5;
-		}
+
+		li, a {
+			display: block;
+  		}
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+	.menu {
+		display: flex;
 	}
 }
