@@ -179,6 +179,6 @@ app.get('/profil/:id', (req, res) => {
 	let id = ObjectID(req.params.id)
 	console.log("profil")
 	let cursor = db.collection('adresse').find({"_id":id}).toArray(function(err, resultat){
- 		res.render('composants/profil.ejs', {adresse: resultat})
+ 		res.render('profil.ejs', {adresse: resultat})
  	})
 })
