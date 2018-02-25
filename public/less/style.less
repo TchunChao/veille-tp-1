@@ -1,3 +1,6 @@
+@gris: #222228;
+@rouge: #b8312f;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,7 +8,7 @@
 	text-decoration: none;
 
 	div.nav-container {
-		background-color: #222228;
+		background-color: @gris;
 		
 		a#logo {
 			display: flex;
@@ -44,14 +47,29 @@
 
 	    input:last-child {
 	    	color: white;
-	    	background-color: #222228;
+	    	background-color: @gris;
 	    	border: none;
 	    }
 	}
 
 	table.tableau {
+		font-size: 0.8em;
+		border-collapse: collapse;
+		margin-top: 20px;
+
+		td,th {
+			border: 1px solid @gris;
+		}
+
 		tr td:first-child, tr th:first-child {
 			display: none;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #f2f2f2;
+		}
+		a {
+			color: @rouge;
 		}
 	}
 }
