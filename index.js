@@ -158,9 +158,6 @@ app.get('/peupler', (req,res) =>{
 	res.redirect('/adresse')
 })
 
-//db.adresse.find({nom: "Mercier"})
-//db.adresse.find({courriel: "pthomsen@gmail.com"})
-
 app.post('/rechercher', (req, res) => {
 	//res.resultat = peupler_bd()
 	console.log('rechercher')
@@ -176,4 +173,21 @@ app.post('/rechercher', (req, res) => {
 	}).toArray(function(err, resultat) {
 		res.render('adresse.ejs', {adresse: resultat})
 	})
+})
+
+app.get('/profil/:id', (req, res) => {
+	let id = req.params.id
+	console.log("profil")
+	
+
+ 	/*
+		let id = req.params.id
+		console.log(id)
+		 db.collection('adresse').findOneAndDelete({"_id" :ObjectID(req.params.id)} ,(err, resultat) => {
+		 if (err) return res.send(500, err)
+			if (err) return console.log(err)
+			 	res.redirect("/adresse")
+		}) 
+ 	*/
+ 	res.redirect('/')
 })
