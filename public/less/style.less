@@ -82,7 +82,7 @@
 			color: white;
 			&:hover {
 				color: @rouge;
-				transition: color 0.2s;
+				transition: color 0.5s;
 			}
 		}
 	}
@@ -94,5 +94,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
-	
+	* {
+		div.nav-container ul.menu {
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
 }
