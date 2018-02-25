@@ -1,8 +1,23 @@
-div.nav-container {
-	display: flex;
+* {
+	margin: 0;
 
-	a:first-child {
+	div.nav-container {
 		display: flex;
+
+		a:first-child {
+			display: flex;
+
+			h1 {
+				line-height: 3;
+			}
+		}
+		a:not(:first-child) {
+			line-height: 5;
+		}
+		form {
+			line-height: 5;
+		}
 	}
 }
+
 
