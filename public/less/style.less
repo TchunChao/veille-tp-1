@@ -20,6 +20,11 @@
 				font-size: 1em;
 				margin-left: 10px;
 			}
+
+			&:hover svg, &:hover h1{
+				color: @rouge;
+				transition: color 0.5s;
+			}
 		}
 
 		ul.menu {
@@ -35,7 +40,11 @@
 	  		li, form {
 	  			padding: 5px;
 	  		}
-		}		
+
+	  		a:hover {
+	  			color: @rouge;
+	  		}
+		}	
 	}
 
 	form#mon_formulaire {
