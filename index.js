@@ -176,10 +176,11 @@ app.post('/rechercher', (req, res) => {
 })
 
 app.get('/profil/:id', (req, res) => {
-	let id = req.params.id
+	let id = ObjectID(req.params.id)
 	console.log("profil")
-	
-
+	let cursor = db.collection('adresse').find({"_id":id}).toArray(function(err, resultat){
+ 		res.render('adresse.ejs', {adresse: resultat})
+ 	})
  	/*
 		let id = req.params.id
 		console.log(id)
@@ -189,5 +190,5 @@ app.get('/profil/:id', (req, res) => {
 			 	res.redirect("/adresse")
 		}) 
  	*/
- 	res.redirect('/')
+ 	//res.redirect('/')
 })
